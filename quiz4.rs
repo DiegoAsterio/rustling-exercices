@@ -5,10 +5,16 @@
 
 // Write a macro that passes the quiz! No hints this time, you can do it!
 
-// I AM NOT DONE
+#[macro_export]
+macro_rules! my_macro {
+    ($val:expr) => {
+	concat!("Hello ", $val);
+    }
+}
 
 #[cfg(test)]
 mod tests {
+    #[macro_use]
     use super::*;
 
     #[test]
